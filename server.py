@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+from PIL import Image
 import uuid
 
 # configuration
@@ -12,45 +13,33 @@ app.config.from_object(__name__)
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
 
-class Member:
-    def __init__(self, name, title, bio, media_handles):
-        self.name = name
-        self.title = title
-        self.bio = bio
-        self.media_handles = media_handles
+# try:
+#     evan_pic = Image.open('./images/evan-pic-01.jpg')
+#     chase_pic = Image.open('./images/chase-pic-01.jpg')
+# except IOError:
+#     pass
 
 members = [
     {
+        'pic': '/img/chase-pic-01.3c530bb0.jpg',
         'name': 'Chase Holton',
-        'title':'Front man for Chase&Co.', 
+        'title':'Singer/Songwriter', 
         'bio': 'Wichita native, Kansas raised',
-        'media_handles': ['@Chasewholton', '@Chaseholton1', '@Chase Holton'],
+        'media_handles': ['Twitter: @Chasewholton', 'Insta: @Chaseholton1', 'Facebook: @Chase Holton'],
     },
     {
         'name': 'Joseph Webster',
-        'title':'Lead guitarist for Chase&Co.', 
+        'title':'Lead Guitarist', 
         'bio': 'Born in El Dorado, KS',
-        'media_handles': ['@wut'],
+        'media_handles': ['Insta: @merriam.webster.94', 'Facebook: @Joseph Webster'],
     },
     {
+        'pic' : '/img/evan-pic-01.2931df6e.jpg',
         'name': 'Evan Van Arsdale',
-        'title':'Bassist for Chase&Co.', 
+        'title':'Bassist', 
         'bio': 'Born in Wichita, KS; Raised in El Dorado, KS',
-        'media_handles': ['@evan.vanarsdale','@evan_vanarsdale','@Evan Van Arsdale'],
+        'media_handles': ['Twitter: @evan_vanarsdale','Insta: @evan.vanarsdale','Facebook: @Evan Van Arsdale'],
     }
-
-    # Member('Chase Holton', 
-    #        'Front man for Chase&Co.', 
-    #        'Wichita native, Kansas raised',
-    #        ['@Chasewholton', '@Chaseholton1', '@Chase Holton']),
-    # Member('Evan Van Arsdale',
-    #        'Bassist for Chase&Co.',
-    #        'Born in Wichita, KS; Raised in El Dorado, KS',
-    #        ['@evan.vanarsdale','@evan_vanarsdale','@Evan Van Arsdale']),
-    # Member('Joseph Webster',
-    #        'Lead guitarist for Chase&Co.',
-    #        'Born and Raised in El Dorado, KS',
-    #        ['@something'])
 ]
 
 # sanity check route
