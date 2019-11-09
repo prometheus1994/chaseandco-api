@@ -1,5 +1,5 @@
 # Chase&Co. API
-A backend RESTful API for Chase&amp;Co. created with Flask.
+A backend RESTful API for Chase&amp;Co. created with Flask, Flask-CORS, and Python3.
 
 ## Environment  
 The environment for the API requires some dependencies you may not want to install globally.  
