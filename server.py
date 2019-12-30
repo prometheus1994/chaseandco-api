@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-from PIL import Image
+# from PIL import Image
 import uuid
 
 # configuration
@@ -21,7 +21,6 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 
 members = [
     {
-        'pic': '/img/chase-pic-01.3c530bb0.jpg',
         'name': 'Chase Holton',
         'title':'Singer/Songwriter', 
         'bio': 'Wichita native, Kansas raised',
@@ -34,7 +33,6 @@ members = [
         'media_handles': ['Insta: @merriam.webster.94', 'Facebook: @Joseph Webster'],
     },
     {
-        'pic' : '/img/evan-pic-01.2931df6e.jpg',
         'name': 'Evan Van Arsdale',
         'title':'Bassist', 
         'bio': 'Born in Wichita, KS; Raised in El Dorado, KS',
